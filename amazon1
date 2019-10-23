@@ -1,0 +1,40 @@
+m,n,k=3,3,0
+x1,y1,x2,y2=1,2,3,3
+li=list(map(int,input().split()))
+if x1==x2:
+  z1,z2=y1-1,y2
+else:
+  z1,z2=0,n
+a=[]
+sum=0
+for i in range(0,m):
+  a.append([])
+  for j in range(0,n):
+    a[i].append(li[k])
+    k+=1
+for i in range(x1-1,x2):
+  if i==x1-1:
+    z1=y1-1
+  if i==x2-1:
+    z2=y2
+  for j in range(z1,z2):
+    sum+=a[i][j]
+    print(a[i][j])
+  z1=0
+  z2=n
+print(sum)
+
+Given a matrix C of size N x M. 
+You are given position of submatrix as X1, Y1 and X2, Y2 inside the matrix. 
+Find the sum of all elements inside that submatrix.
+Input:
+2
+5 6
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+3 4 4 5
+3 3
+9 8 7 4 2 1 6 5 3
+1 2 3 3
+Output:
+78
+26
